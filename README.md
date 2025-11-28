@@ -5,26 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lobey Sangay Wangchuck Mentor-Mentee Group</title>
     <style>
-        /* ------------------ General Body ------------------ */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             line-height: 1.6;
-            background: linear-gradient(135deg, #ffe6f0, #ffffff); /* pink to white gradient */
-            color: #333;
+            background: #000; /* black background */
+            color: #fff; /* white text */
             transition: all 0.3s ease;
         }
 
-        /* ------------------ Header ------------------ */
         header {
-            background: linear-gradient(90deg, #ff99cc, #ffcce6); /* pink gradient */
-            color: white;
+            background: linear-gradient(90deg, #000000, #333333); /* black-gray gradient */
+            color: #FFD700; /* golden header text */
             padding: 1rem 0;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.7);
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
         }
@@ -34,9 +32,9 @@
             font-family: 'Georgia', serif;
             font-size: 2rem;
             letter-spacing: 1px;
+            color: #FFD700; /* golden title */
         }
 
-        /* ------------------ Navigation ------------------ */
         nav {
             display: flex;
             justify-content: center;
@@ -45,7 +43,7 @@
         }
 
         nav a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
@@ -56,18 +54,18 @@
         }
 
         nav a:hover {
-            background-color: rgba(255,255,255,0.3);
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #FFD700; /* golden hover */
             transform: scale(1.1);
         }
 
-        /* ------------------ Sections ------------------ */
         section {
             padding: 3rem 2rem;
             max-width: 1000px;
             margin: 2rem auto;
-            background: #fff0f6; /* very light pink section background */
+            background: #111; /* dark gray background */
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
             display: none;
             transition: transform 0.5s ease, opacity 0.5s ease;
             opacity: 0;
@@ -80,7 +78,7 @@
         }
 
         h2 {
-            color: #1a1a1a;
+            color: #FFD700; /* golden headings */
             text-align: center;
             margin-bottom: 1rem;
             font-family: 'Georgia', serif;
@@ -91,7 +89,7 @@
             position: absolute;
             width: 60px;
             height: 3px;
-            background: #ff99cc;
+            background: #FFD700; /* golden underline */
             left: 50%;
             bottom: -10px;
             transform: translateX(-50%);
@@ -102,6 +100,7 @@
             text-align: justify;
             line-height: 1.8;
             font-size: 1.1rem;
+            color: #ccc; /* light gray text */
         }
 
         img {
@@ -111,14 +110,15 @@
             margin: 1rem auto;
             border-radius: 15px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            filter: grayscale(100%); /* black and white images */
         }
 
         img:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+            filter: grayscale(0%); /* show color on hover */
         }
 
-        /* ------------------ Diagonal Cards for Photos ------------------ */
         .diagonal-row {
             display: flex;
             flex-wrap: wrap;
@@ -129,7 +129,7 @@
         .diagonal-row div {
             margin: 10px;
             text-align: center;
-            background: linear-gradient(135deg, #ffe6f0, #ffcce6);
+            background: #222; /* dark gray boxes */
             padding: 10px;
             border-radius: 15px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -138,29 +138,33 @@
 
         .diagonal-row div:hover {
             transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(255,255,255,0.3);
         }
 
         .diagonal-row p {
             margin-top: 0.5rem;
             font-weight: 600;
             font-size: 0.95rem;
-            color: #333;
+            color: #FFD700; /* golden text for names */
         }
 
-        /* ------------------ Footer ------------------ */
+        /* Make last two group photos bigger */
+        #groupphotos .diagonal-row div:last-child,
+        #groupphotos .diagonal-row div:nth-last-child(2) {
+            width: 250px;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(90deg, #ff99cc, #ffcce6);
-            color: white;
+            background: #111; /* dark footer */
+            color: #FFD700; /* golden text */
             font-weight: 600;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 -5px 15px rgba(255,255,255,0.1);
         }
 
-        /* ------------------ Smooth scroll on section change ------------------ */
         html {
             scroll-behavior: smooth;
         }
@@ -180,13 +184,11 @@
     </nav>
 </header>
 
-<!-- About Section -->
 <section id="about" class="active">
     <h2>About the Group</h2>
     <p>The Lobey Sangay Wangchuck Mentor-Mentee Group is an amazing and supportive community. It is one of the best mentor-mentee groups where everyone helps each other grow, learn, and improve. The mentor provides valuable guidance, while the mentees actively support one another, making it a truly helpful and inspiring environment.</p>
 </section>
 
-<!-- Mentor Section -->
 <section id="mentor">
     <h2>Mentor</h2>
     <p>Lobey Sangay Wangchuck is around 47 years old and hails from Tashi Yangtshi, Bhutan. He is a senior at the Royal Academy and widely recognized as one of the best mentors. With his guidance, mentees are encouraged to learn, grow, and achieve their best potential. He is not only an excellent mentor but also a kind and supportive figure for the entire group.</p>
@@ -194,7 +196,6 @@
     <img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.11.11%E2%80%AFPM.png" alt="Mentor Photo">
 </section>
 
-<!-- Mentees Section -->
 <section id="mentees">
     <h2>Mentees</h2>
     <p>Our mentees are enthusiastic, hardworking, and supportive of one another:</p>
@@ -214,7 +215,6 @@
     </div>
 </section>
 
-<!-- Nature Retreats Section -->
 <section id="nature">
     <h2>Nature Retreats</h2>
     <p>Our group has visited several beautiful nature spots in Bhutan, enjoying the serene landscapes and bonding experiences:</p>
@@ -228,7 +228,6 @@
     </div>
 </section>
 
-<!-- Group Photos Section -->
 <section id="groupphotos">
     <h2>Group Photos</h2>
     <p>Here are some memorable moments captured from our mentor-mentee group activities:</p>
@@ -254,4 +253,5 @@ function showSection(id) {
 
 </body>
 </html>
+
 
