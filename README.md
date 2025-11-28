@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lobey Sangay Wangchuck Mentor-Mentee Group</title>
     <style>
+        /* ------------------ General Body ------------------ */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             line-height: 1.6;
-            background-color: #ffffff; /* background white */
-            color: #000000; /* text black */
+            background: linear-gradient(135deg, #ffe6f0, #ffffff); /* pink to white gradient */
+            color: #333;
+            transition: all 0.3s ease;
         }
 
+        /* ------------------ Header ------------------ */
         header {
-            background-color: #ffffff; /* header white */
-            color: #000000;
+            background: linear-gradient(90deg, #ff99cc, #ffcce6); /* pink gradient */
+            color: white;
             padding: 1rem 0;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
         }
 
+        header h1 {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        /* ------------------ Navigation ------------------ */
         nav {
             display: flex;
             justify-content: center;
@@ -31,33 +45,63 @@
         }
 
         nav a {
-            color: #000000; /* black links */
+            color: white;
             text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
+            font-weight: 600;
             font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            background-color: rgba(255,255,255,0.3);
+            transform: scale(1.1);
         }
 
+        /* ------------------ Sections ------------------ */
         section {
             padding: 3rem 2rem;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 2rem auto;
-            background-color: #ffffff; /* section white */
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: #fff0f6; /* very light pink section background */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             display: none;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
         }
 
         section.active {
             display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h2 {
-            color: #000000; /* headings black */
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #ff99cc;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 1.1rem;
         }
 
         img {
@@ -65,33 +109,62 @@
             height: auto;
             display: block;
             margin: 1rem auto;
-            border-radius: 10px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Diagonal layout for photos */
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* ------------------ Diagonal Cards for Photos ------------------ */
         .diagonal-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 20px;
         }
+
         .diagonal-row div {
             margin: 10px;
             text-align: center;
+            background: linear-gradient(135deg, #ffe6f0, #ffcce6);
+            padding: 10px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 180px;
         }
 
-        ul {
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto 1rem auto;
+        .diagonal-row div:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
+        .diagonal-row p {
+            margin-top: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        /* ------------------ Footer ------------------ */
         footer {
             text-align: center;
             padding: 2rem;
-            background-color: #ffffff; /* footer white */
-            color: #000000;
-            margin-top: 2rem;
+            background: linear-gradient(90deg, #ff99cc, #ffcce6);
+            color: white;
+            font-weight: 600;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
         }
+
+        /* ------------------ Smooth scroll on section change ------------------ */
+        html {
+            scroll-behavior: smooth;
+        }
+
     </style>
 </head>
 <body>
@@ -161,8 +234,7 @@
     <p>Here are some memorable moments captured from our mentor-mentee group activities:</p>
     <div class="diagonal-row">
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/WhatsApp%20Image%202024-10-07%20at%2011.33.05%20AM.jpeg" alt="Group Photo 1"></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445yawtys/Image_20250515_205345_464.jpeg
-" alt="Group Photo 2"></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/WhatsApp%20Image%202024-10-07%20at%2011.33.03%20AM-3.jpeg" alt="Group Photo 2"></div>
     </div>
 </section>
 
@@ -172,11 +244,14 @@
 
 <script>
 function showSection(id) {
-    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    document.querySelectorAll('section').forEach(sec => {
+        sec.classList.remove('active');
+    });
     document.getElementById(id).classList.add('active');
-    window.scrollTo(0,0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
 
 </body>
 </html>
+
