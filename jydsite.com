@@ -9,7 +9,7 @@
         font-family: 'Arial', sans-serif;
         margin: 0;
         line-height: 1.6;
-        background-color: #000000; /* black background */
+        background-color: #000000; /* fully black background */
         color: #ffffff;
     }
 
@@ -73,44 +73,43 @@
         margin-bottom: 2rem;
     }
 
-    /* Mentor diagonal photo */
+    /* Mentor photo - diagonal layout using flex */
     .mentor-photo {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
         margin: 2rem 0;
     }
 
     .mentor-photo img {
-        width: 250px;
-        transform: rotate(-10deg);
+        width: 300px;
+        height: auto;
         border-radius: 12px;
         border: 3px solid #FFD700;
         filter: grayscale(100%);
-        transition: filter 0.5s, transform 0.3s;
+        transition: filter 0.5s;
     }
 
     .mentor-photo img:hover {
         filter: grayscale(0%);
-        transform: rotate(0deg) scale(1.1);
     }
 
-    /* Horizontal image galleries */
+    /* Horizontal galleries for mentees, nature, and group photos */
     .image-row {
         display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
+        flex-wrap: wrap; /* wrap to next line if no space */
+        justify-content: center;
         gap: 1.5rem;
         padding-bottom: 1rem;
-        scroll-behavior: smooth;
     }
 
     .image-row div {
-        flex: 0 0 auto;
         text-align: center;
     }
 
     .image-row img {
-        width: 200px;
+        width: 220px; /* a bit bigger for group photos too */
         height: auto;
         border-radius: 12px;
         border: 3px solid #FFD700;
@@ -120,7 +119,7 @@
 
     .image-row img:hover {
         filter: grayscale(0%);
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 
     .image-row p {
@@ -136,19 +135,6 @@
         color: #FFD700;
         margin-top: 3rem;
         font-size: 0.95rem;
-    }
-
-    .image-row::-webkit-scrollbar {
-        height: 8px;
-    }
-
-    .image-row::-webkit-scrollbar-thumb {
-        background: #FFD700;
-        border-radius: 4px;
-    }
-
-    .image-row::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1);
     }
 
     @media(max-width: 768px) {
@@ -175,13 +161,11 @@
     </nav>
 </header>
 
-<!-- About Section -->
 <section id="about" class="active">
     <h2>About the Group</h2>
     <p>Lobey Sangay Wangchuk Mentor-Mentee Group is a supportive and inspiring community. Mentees learn and grow under the guidance of their mentor, while also supporting one another in a collaborative environment.</p>
 </section>
 
-<!-- Mentor Section -->
 <section id="mentor">
     <h2>Mentor</h2>
     <p>Lobey Sangay Wangchuk, aged 47, from Tashi Yangtshi, Bhutan, is a senior mentor recognized for his dedication and ability to inspire. Married to Dorji Dema, they have one daughter and one son. He provides invaluable guidance to his mentees with humility and kindness.</p>
@@ -190,10 +174,9 @@
     </div>
 </section>
 
-<!-- Mentees Section -->
 <section id="mentees">
     <h2>Mentees</h2>
-    <p>Meet the hardworking, curious, and positive mentees who bring energy and inspiration to every session. Each mentee has unique strengths, and together they form an encouraging and fun environment.</p>
+    <p>Meet the hardworking, curious, and positive mentees who bring energy and inspiration to every session.</p>
     <div class="image-row">
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.12.20%E2%80%AFPM.png" alt="Cheying Yeshi"><p>Cheying Yeshi</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.13.02%E2%80%AFPM.png" alt="Rinzin Wangmo"><p>Rinzin Wangmo</p></div>
@@ -210,7 +193,6 @@
     </div>
 </section>
 
-<!-- Nature Retreats Section -->
 <section id="nature">
     <h2>Nature Retreats</h2>
     <p>Our group has explored beautiful nature spots in Bhutan, learning to appreciate the environment, meet kind people, and gain inspiration from breathtaking views.</p>
@@ -224,7 +206,6 @@
     </div>
 </section>
 
-<!-- Group Photos Section -->
 <section id="groupphotos">
     <h2>Group Photos</h2>
     <p>Memorable moments captured from our mentor-mentee group:</p>
@@ -247,3 +228,4 @@ function showSection(id) {
 </script>
 
 </body>
+</html>
