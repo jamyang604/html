@@ -97,7 +97,7 @@
 <body>
 
 <header>
-    <h1>Lobey Sangay Wangchuck Mentor-Mentee Group</h1>
+    <h1>Lobey Sangay Wangchuk Mentor-Mentee Group</h1>
     <nav>
         <a onclick="showSection('about')">About</a>
         <a onclick="showSection('mentor')">Mentor</a>
