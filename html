@@ -1,114 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lobey Sangay Wangchuk Mentor-Mentee Group</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #000000, #FFD700, #ffffff); /* black-gold-white gradient */
-            color: #ffffff; /* default text white */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lobey Sangay Wangchuk Mentor-Mentee Group</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        line-height: 1.6;
+        background-color: #000000; /* black background */
+        color: #ffffff;
+    }
+
+    header {
+        background-color: #000000;
+        color: #FFD700;
+        padding: 1.5rem 0;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    nav a {
+        color: #FFD700;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+    section {
+        padding: 3rem 2rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+        background-color: rgba(255, 215, 0, 0.05);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        display: none;
+    }
+
+    section.active {
+        display: block;
+    }
+
+    h2 {
+        color: #FFD700;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+    }
+
+    p {
+        color: #ffffff;
+        font-size: 1.05rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* Mentor diagonal photo */
+    .mentor-photo {
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+    }
+
+    .mentor-photo img {
+        width: 250px;
+        transform: rotate(-10deg);
+        border-radius: 12px;
+        border: 3px solid #FFD700;
+        filter: grayscale(100%);
+        transition: filter 0.5s, transform 0.3s;
+    }
+
+    .mentor-photo img:hover {
+        filter: grayscale(0%);
+        transform: rotate(0deg) scale(1.1);
+    }
+
+    /* Horizontal image galleries */
+    .image-row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+        scroll-behavior: smooth;
+    }
+
+    .image-row div {
+        flex: 0 0 auto;
+        text-align: center;
+    }
+
+    .image-row img {
+        width: 200px;
+        height: auto;
+        border-radius: 12px;
+        border: 3px solid #FFD700;
+        filter: grayscale(100%);
+        transition: filter 0.5s, transform 0.3s;
+    }
+
+    .image-row img:hover {
+        filter: grayscale(0%);
+        transform: scale(1.1);
+    }
+
+    .image-row p {
+        color: #FFD700;
+        margin-top: 0.5rem;
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center;
+        padding: 2rem;
+        background-color: #000000;
+        color: #FFD700;
+        margin-top: 3rem;
+        font-size: 0.95rem;
+    }
+
+    .image-row::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .image-row::-webkit-scrollbar-thumb {
+        background: #FFD700;
+        border-radius: 4px;
+    }
+
+    .image-row::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media(max-width: 768px) {
+        .image-row img {
+            width: 150px;
         }
 
-        header {
-            background-color: #000000; /* header black */
-            color: #FFD700; /* gold text */
-            padding: 1rem 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .mentor-photo img {
+            width: 180px;
         }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 0.5rem;
-        }
-
-        nav a {
-            color: #FFD700; /* gold links */
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            padding: 3rem 2rem;
-            max-width: 900px;
-            margin: 2rem auto;
-            background-color: rgba(0, 0, 0, 0.8); /* semi-transparent black */
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            display: none;
-        }
-
-        section.active {
-            display: block;
-        }
-
-        h2 {
-            color: #FFD700; /* gold headings */
-            text-align: center;
-        }
-
-        p {
-            color: #ffffff; /* white text */
-        }
-
-        /* Diagonal layout for photos */
-        .diagonal-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            transform: rotate(-3deg); /* slight diagonal effect */
-        }
-        .diagonal-row div {
-            margin: 15px;
-            text-align: center;
-            transform: rotate(3deg); /* counter rotate each photo to align nicely */
-        }
-
-        img {
-            max-width: 200px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 10px;
-            filter: grayscale(100%); /* black and white */
-            transition: filter 0.5s, transform 0.3s;
-            border: 3px solid #FFD700; /* gold border */
-        }
-
-        img:hover {
-            filter: grayscale(0%); /* color on hover */
-            transform: scale(1.05); /* slight zoom effect */
-        }
-
-        ul {
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto 1rem auto;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: #000000; /* footer black */
-            color: #FFD700; /* gold text */
-            margin-top: 2rem;
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 
@@ -126,45 +178,46 @@
 <!-- About Section -->
 <section id="about" class="active">
     <h2>About the Group</h2>
-    <p>Lobey Sangay Wangchuk Mentor-Mentee Group is an amazing and supportive group. It is one of the best mentor-mentee groups where everyone helps each other grow, learn, and improve. The mentor provides valuable guidance, while the mentees actively support one another, making it truly helpful and inspiring.</p>
+    <p>Lobey Sangay Wangchuk Mentor-Mentee Group is a supportive and inspiring community. Mentees learn and grow under the guidance of their mentor, while also supporting one another in a collaborative environment.</p>
 </section>
 
 <!-- Mentor Section -->
 <section id="mentor">
     <h2>Mentor</h2>
-    <p>Lobey Sangay Wangchuk is around 47 years old and hails from Tashigang, Bhutan. He is a senior at the Royal Academy and widely recognized as one of the best mentors. With his guidance, mentees are encouraged to learn, grow, and achieve their best potential. He is not only an excellent mentor but also a kind and supportive figure for the entire group.</p>
-    <p>He is married to Dorji Dema and together they have one daughter and one son. Beyond his professional accomplishments, he is known for his humility, dedication, and ability to inspire those around him.</p>
-    <img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.11.11%E2%80%AFPM.png" alt="Mentor Photo">
+    <p>Lobey Sangay Wangchuk, aged 47, from Tashi Yangtshi, Bhutan, is a senior mentor recognized for his dedication and ability to inspire. Married to Dorji Dema, they have one daughter and one son. He provides invaluable guidance to his mentees with humility and kindness.</p>
+    <div class="mentor-photo">
+        <img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.11.11%E2%80%AFPM.png" alt="Mentor Photo">
+    </div>
 </section>
 
 <!-- Mentees Section -->
 <section id="mentees">
     <h2>Mentees</h2>
-    <p>Meet the amazing mentees—a group of hardworking, curious, and positive individuals who are always eager to learn and grow. They bring great energy, ask thoughtful questions, and support one another, making every session enjoyable and inspiring. Each mentee has unique strengths, and together they create a fun, encouraging environment. Watching them gain confidence and try new things shows just how dedicated and capable they are. They truly make the whole learning experience special.</p>
-    <div class="diagonal-row">
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.12.20%E2%80%AFPM.png" alt="Cheying Yeshi"><p>Cheying Yeshi - Grade 12</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.13.02%E2%80%AFPM.png" alt="Rinzin Wangmo"><p>Rinzin Wangmo - Grade 12</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.14.08%E2%80%AFPM.png" alt="Sonam Wangchuk"><p>Sonam Wangchuk - Grade 12</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.41.40%E2%80%AFPM.png" alt="Namgay Lhamo"><p>Namgay Lhamo - Grade 11</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.41.52%E2%80%AFPM.png" alt="Rigzin Kinzang Thinley"><p>Rigzin Kinzang Thinley - Grade 11</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.42.12%E2%80%AFPM.png" alt="Pema Yoezer"><p>Pema Yoezer - Grade 10</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.42.27%E2%80%AFPM.png" alt="Jamyang Yuden Dorji"><p>Jamyang Yuden Dorji - Grade 9</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.43.20%E2%80%AFPM.png" alt="Kinzang Choden"><p>Kinzang Choden - Grade 9</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.43.34%E2%80%AFPM.png" alt="Pema Thinley"><p>Pema Thinley - Grade 8</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.43.42%E2%80%AFPM.png" alt="Singye Wangmo"><p>Singye Wangmo - Grade 8</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.43.56%E2%80%AFPM.png" alt="Jigme Yeshey Choden"><p>Jigme Yeshey Choden - Grade 7</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.44.07%E2%80%AFPM.png" alt="Rigsel Lhaki Lhazi"><p>Rigsel Lhaki Lhazi - Grade 7</p></div>
+    <p>Meet the hardworking, curious, and positive mentees who bring energy and inspiration to every session. Each mentee has unique strengths, and together they form an encouraging and fun environment.</p>
+    <div class="image-row">
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.12.20%E2%80%AFPM.png" alt="Cheying Yeshi"><p>Cheying Yeshi</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.13.02%E2%80%AFPM.png" alt="Rinzin Wangmo"><p>Rinzin Wangmo</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.14.08%E2%80%AFPM.png" alt="Sonam Wangchuk"><p>Sonam Wangchuk</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.41.40%E2%80%AFPM.png" alt="Namgay Lhamo"><p>Namgay Lhamo</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.41.52%E2%80%AFPM.png" alt="Rigzin Kinzang Thinley"><p>Rigzin Kinzang Thinley</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.42.12%E2%80%AFPM.png" alt="Pema Yoezer"><p>Pema Yoezer</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.42.27%E2%80%AFPM.png" alt="Jamyang Yuden Dorji"><p>Jamyang Yuden Dorji</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.43.20%E2%80%AFPM.png" alt="Kinzang Choden"><p>Kinzang Choden</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.43.34%E2%80%AFPM.png" alt="Pema Thinley"><p>Pema Thinley</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.43.42%E2%80%AFPM.png" alt="Singye Wangmo"><p>Singye Wangmo</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.43.56%E2%80%AFPM.png" alt="Jigme Yeshey Choden"><p>Jigme Yeshey Choden</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.44.07%E2%80%AFPM.png" alt="Rigsel Lhaki Lhazi"><p>Rigsel Lhaki Lhazi</p></div>
     </div>
 </section>
 
 <!-- Nature Retreats Section -->
 <section id="nature">
     <h2>Nature Retreats</h2>
-    <p>Our group has visited several beautiful nature spots in Bhutan as our nature retreat. By exploring these places, we learned to pay attention to small details, enjoy the moment, and appreciate the beauty around us. We discovered new cultures, met kind people, and saw views that made us feel peaceful and inspired.</p>
-    <div class="diagonal-row">
+    <p>Our group has explored beautiful nature spots in Bhutan, learning to appreciate the environment, meet kind people, and gain inspiration from breathtaking views.</p>
+    <div class="image-row">
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Jele-Dzong-Hike-Paro-1024x565.jpg" alt="Jelha Dzong"><p>Jelha Dzong</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/gangtey.jpg" alt="Phobjikha"><p>Phobjikha</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/images%20(2).jpeg" alt="Bumgtang"><p>Bumthang</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/images%20(2).jpeg" alt="Bumthang"><p>Bumthang</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/IMG_20241003_114317.jpg" alt="Khotokha"><p>Khotokha</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/unnamed.webp" alt="Punakha"><p>Punakha</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/images%20(3).jpeg" alt="Domendrel"><p>Domendrel</p></div>
@@ -174,10 +227,10 @@
 <!-- Group Photos Section -->
 <section id="groupphotos">
     <h2>Group Photos</h2>
-    <p>Here are some memorable moments captured from our mentor-mentee group:</p>
-    <div class="diagonal-row">
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/WhatsApp%20Image%202024-10-07%20at%2011.33.05%20AM.jpeg" alt="Group Photo 1"></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445yawtys/Image_20250515_205345_464.jpeg" alt="Group Photo 2"></div>
+    <p>Memorable moments captured from our mentor-mentee group:</p>
+    <div class="image-row">
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/WhatsApp%20Image%202024-10-07%20at%2011.33.05%20AM.jpeg" alt="Group Photo 1"><p>Group Photo 1</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445yawtys/Image_20250515_205345_464.jpeg" alt="Group Photo 2"><p>Group Photo 2</p></div>
     </div>
 </section>
 
@@ -195,5 +248,7 @@ function showSection(id) {
 
 </body>
 </html>
+
+
 
 
