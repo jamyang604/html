@@ -92,16 +92,6 @@
             color: #000000;
             margin-top: 2rem;
         }
-
-        /* Upload box style */
-        .upload-box {
-            max-width: 600px;
-            margin: 1rem auto;
-            text-align: center;
-        }
-        .upload-box input, .upload-box button {
-            margin: 0.5rem 0;
-        }
     </style>
 </head>
 <body>
@@ -134,17 +124,8 @@
 <!-- Mentees Section -->
 <section id="mentees">
     <h2>Mentees</h2>
-    <p>Meet the amazing mentees. A group of hardworking, curious, and positive individuals who are always eager to learn and grow. They bring great energy, ask thoughtful questions, and support one another, making every session enjoyable and inspiring. Each mentee has unique strengths, and together they create a fun, encouraging environment. Watching them gain confidence and try new things shows just how dedicated and capable they are.</p>
-    
-    <!-- Upload box to add new mentee -->
-    <div class="upload-box">
-        <h3>Add New Mentee Photo</h3>
-        <input type="file" accept="image/*" id="mentees-file">
-        <input type="text" id="mentees-name" placeholder="Enter name and grade">
-        <button onclick="addImageWithName()">Add Photo</button>
-    </div>
-
-    <div class="diagonal-row" id="mentees-container">
+    <p>Meet the amazing mentees.A group of hardworking, curious, and positive individuals who are always eager to learn and grow. They bring great energy, ask thoughtful questions, and support one another, making every session enjoyable and inspiring. Each mentee has unique strengths, and together they create a fun, encouraging environment. Watching them gain confidence and try new things shows just how dedicated and capable they are. They truly make the whole learning experience special.:</p>
+    <div class="diagonal-row">
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.12.20%E2%80%AFPM.png" alt="Cheying Yeshi"><p>Cheying Yeshi - Grade 12</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.13.02%E2%80%AFPM.png" alt="Rinzin Wangmo"><p>Rinzin Wangmo - Grade 12</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.14.08%E2%80%AFPM.png" alt="Sonam Wangchuk"><p>Sonam Wangchuk - Grade 12</p></div>
@@ -163,11 +144,11 @@
 <!-- Nature Retreats Section -->
 <section id="nature">
     <h2>Nature Retreats</h2>
-    <p>Our group has visited several beautiful nature spots in Bhutan as our nature retreats. By exploring these places, I learned to pay attention to small details, enjoy the moment, and appreciate the beauty around me. I discovered new cultures, met kind people, and saw views that made me feel peaceful and inspired.</p>
+    <p>Our group has visited several beautiful nature spots in Bhutan as our Nnature retreat.y exploring these places, I learned to pay attention to small details, enjoy the moment, and appreciate the beauty around me. I discovered new cultures, met kind people, and saw views that made me feel peaceful and inspired.:</p>
     <div class="diagonal-row">
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Jele-Dzong-Hike-Paro-1024x565.jpg" alt="Jelha Dzong"><p>Jelha Dzong</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/gangtey.jpg" alt="Phobjikha"><p>Phobjikha</p></div>
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/images%20(2).jpeg" alt="Bumthang"><p>Bumthang</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/images%20(2).jpeg" alt="Bumgtang"><p>Bumthang</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/IMG_20241003_114317.jpg" alt="Khotokha"><p>Khotokha</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/unnamed.webp" alt="Punakha"><p>Punakha</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/images%20(3).jpeg" alt="Domendrel"><p>Domendrel</p></div>
@@ -185,7 +166,7 @@
 </section>
 
 <footer>
-    <p>&copy; 2025 Lobey Sangay Wangchuk Mentor-Mentee Group by Jamyang Yuden Dorji</p>
+    <p>&copy; 2025 Lobey Sangay Wangchuk Mentor-Mentee Group by Jamyang Yuden Dorj</p>
 </footer>
 
 <script>
@@ -194,30 +175,7 @@ function showSection(id) {
     document.getElementById(id).classList.add('active');
     window.scrollTo(0,0);
 }
-
-// Function to add new mentee dynamically
-function addImageWithName() {
-    const fileInput = document.getElementById('mentees-file');
-    const nameInput = document.getElementById('mentees-name');
-    const container = document.getElementById('mentees-container');
-
-    if(fileInput.files.length === 0 || nameInput.value.trim() === '') {
-        alert('Please select an image and enter a name with grade.');
-        return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const div = document.createElement('div');
-        div.innerHTML = `<img src="${e.target.result}" alt="${nameInput.value}"><p>${nameInput.value}</p>`;
-        container.appendChild(div);
-        fileInput.value = '';
-        nameInput.value = '';
-    }
-    reader.readAsDataURL(fileInput.files[0]);
-}
 </script>
 
 </body>
 </html>
-
