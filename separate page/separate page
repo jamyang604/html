@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lobey Sangay Wangchuk Mentor-Mentee Group</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             line-height: 1.6;
-            background-color: #ffffff; /* background white */
-            color: #000000; /* text black */
+            background: linear-gradient(135deg, #000000, #FFD700, #ffffff); /* black-gold-white gradient */
+            color: #ffffff; /* default text white */
         }
 
         header {
-            background-color: #ffffff; /* header white */
-            color: #000000;
+            background-color: #000000; /* header black */
+            color: #FFD700; /* gold text */
             padding: 1rem 0;
             text-align: center;
             position: sticky;
@@ -31,7 +32,7 @@
         }
 
         nav a {
-            color: #000000; /* black links */
+            color: #FFD700; /* gold links */
             text-decoration: none;
             font-weight: bold;
             cursor: pointer;
@@ -46,9 +47,9 @@
             padding: 3rem 2rem;
             max-width: 900px;
             margin: 2rem auto;
-            background-color: #ffffff; /* section white */
+            background-color: rgba(0, 0, 0, 0.8); /* semi-transparent black */
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
             display: none;
         }
 
@@ -57,15 +58,12 @@
         }
 
         h2 {
-            color: #000000; /* headings black */
+            color: #FFD700; /* gold headings */
+            text-align: center;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 1rem auto;
-            border-radius: 10px;
+        p {
+            color: #ffffff; /* white text */
         }
 
         /* Diagonal layout for photos */
@@ -73,10 +71,28 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            transform: rotate(-3deg); /* slight diagonal effect */
         }
         .diagonal-row div {
-            margin: 10px;
+            margin: 15px;
             text-align: center;
+            transform: rotate(3deg); /* counter rotate each photo to align nicely */
+        }
+
+        img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            filter: grayscale(100%); /* black and white */
+            transition: filter 0.5s, transform 0.3s;
+            border: 3px solid #FFD700; /* gold border */
+        }
+
+        img:hover {
+            filter: grayscale(0%); /* color on hover */
+            transform: scale(1.05); /* slight zoom effect */
         }
 
         ul {
@@ -88,8 +104,8 @@
         footer {
             text-align: center;
             padding: 2rem;
-            background-color: #ffffff; /* footer white */
-            color: #000000;
+            background-color: #000000; /* footer black */
+            color: #FFD700; /* gold text */
             margin-top: 2rem;
         }
     </style>
@@ -116,7 +132,7 @@
 <!-- Mentor Section -->
 <section id="mentor">
     <h2>Mentor</h2>
-    <p>Lobey Sangay Wangchuk is around 47 years old and hails from Tashi Yangtshi, Bhutan. He is a senior at the Royal Academy and widely recognized as one of the best mentors. With his guidance, mentees are encouraged to learn, grow, and achieve their best potential. He is not only an excellent mentor but also a kind and supportive figure for the entire group.</p>
+    <p>Lobey Sangay Wangchuk is around 47 years old and hails from Tashigang, Bhutan. He is a senior at the Royal Academy and widely recognized as one of the best mentors. With his guidance, mentees are encouraged to learn, grow, and achieve their best potential. He is not only an excellent mentor but also a kind and supportive figure for the entire group.</p>
     <p>He is married to Dorji Dema and together they have one daughter and one son. Beyond his professional accomplishments, he is known for his humility, dedication, and ability to inspire those around him.</p>
     <img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.11.11%E2%80%AFPM.png" alt="Mentor Photo">
 </section>
@@ -124,7 +140,7 @@
 <!-- Mentees Section -->
 <section id="mentees">
     <h2>Mentees</h2>
-    <p>Meet the amazing mentees.A group of hardworking, curious, and positive individuals who are always eager to learn and grow. They bring great energy, ask thoughtful questions, and support one another, making every session enjoyable and inspiring. Each mentee has unique strengths, and together they create a fun, encouraging environment. Watching them gain confidence and try new things shows just how dedicated and capable they are. They truly make the whole learning experience special.:</p>
+    <p>Meet the amazing mentees—a group of hardworking, curious, and positive individuals who are always eager to learn and grow. They bring great energy, ask thoughtful questions, and support one another, making every session enjoyable and inspiring. Each mentee has unique strengths, and together they create a fun, encouraging environment. Watching them gain confidence and try new things shows just how dedicated and capable they are. They truly make the whole learning experience special.</p>
     <div class="diagonal-row">
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.12.20%E2%80%AFPM.png" alt="Cheying Yeshi"><p>Cheying Yeshi - Grade 12</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.13.02%E2%80%AFPM.png" alt="Rinzin Wangmo"><p>Rinzin Wangmo - Grade 12</p></div>
@@ -144,7 +160,7 @@
 <!-- Nature Retreats Section -->
 <section id="nature">
     <h2>Nature Retreats</h2>
-    <p>Our group has visited several beautiful nature spots in Bhutan as our Nnature retreat.y exploring these places, I learned to pay attention to small details, enjoy the moment, and appreciate the beauty around me. I discovered new cultures, met kind people, and saw views that made me feel peaceful and inspired.:</p>
+    <p>Our group has visited several beautiful nature spots in Bhutan as our nature retreat. By exploring these places, we learned to pay attention to small details, enjoy the moment, and appreciate the beauty around us. We discovered new cultures, met kind people, and saw views that made us feel peaceful and inspired.</p>
     <div class="diagonal-row">
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Jele-Dzong-Hike-Paro-1024x565.jpg" alt="Jelha Dzong"><p>Jelha Dzong</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/gangtey.jpg" alt="Phobjikha"><p>Phobjikha</p></div>
@@ -158,7 +174,7 @@
 <!-- Group Photos Section -->
 <section id="groupphotos">
     <h2>Group Photos</h2>
-    <p>Here are some memorable moments captured from our mentor-mentee:</p>
+    <p>Here are some memorable moments captured from our mentor-mentee group:</p>
     <div class="diagonal-row">
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/WhatsApp%20Image%202024-10-07%20at%2011.33.05%20AM.jpeg" alt="Group Photo 1"></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445yawtys/Image_20250515_205345_464.jpeg" alt="Group Photo 2"></div>
@@ -166,7 +182,7 @@
 </section>
 
 <footer>
-    <p>&copy; 2025 Lobey Sangay Wangchuk Mentor-Mentee Group by Jamyang Yuden Dorj</p>
+    <p>&copy; 2025 Lobey Sangay Wangchuk Mentor-Mentee Group by Jamyang Yuden Dorji</p>
 </footer>
 
 <script>
@@ -179,3 +195,4 @@ function showSection(id) {
 
 </body>
 </html>
+
