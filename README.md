@@ -247,5 +247,3 @@ function showSection(id) {
 </script>
 
 </body>
-</html>
-
