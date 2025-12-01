@@ -9,12 +9,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             line-height: 1.6;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #ffffff; /* background white */
+            color: #000000; /* text black */
         }
 
         header {
-            background-color: #ffffff;
+            background-color: #ffffff; /* header white */
             color: #000000;
             padding: 1rem 0;
             text-align: center;
@@ -31,7 +31,7 @@
         }
 
         nav a {
-            color: #000000;
+            color: #000000; /* black links */
             text-decoration: none;
             font-weight: bold;
             cursor: pointer;
@@ -46,7 +46,7 @@
             padding: 3rem 2rem;
             max-width: 900px;
             margin: 2rem auto;
-            background-color: #ffffff;
+            background-color: #ffffff; /* section white */
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             display: none;
@@ -57,7 +57,7 @@
         }
 
         h2 {
-            color: #000000;
+            color: #000000; /* headings black */
         }
 
         img {
@@ -68,36 +68,39 @@
             border-radius: 10px;
         }
 
+        /* Diagonal layout for photos */
         .diagonal-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
-
         .diagonal-row div {
             margin: 10px;
             text-align: center;
         }
 
-        .upload-box {
+        ul {
+            text-align: left;
             max-width: 600px;
-            margin: 0 auto 2rem auto;
-            padding: 1rem;
-            border: 2px dashed #ccc;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .upload-box input, .upload-box button {
-            margin: 0.5rem 0;
+            margin: 0 auto 1rem auto;
         }
 
         footer {
             text-align: center;
             padding: 2rem;
-            background-color: #ffffff;
+            background-color: #ffffff; /* footer white */
             color: #000000;
             margin-top: 2rem;
+        }
+
+        /* Upload box style */
+        .upload-box {
+            max-width: 600px;
+            margin: 1rem auto;
+            text-align: center;
+        }
+        .upload-box input, .upload-box button {
+            margin: 0.5rem 0;
         }
     </style>
 </head>
@@ -123,7 +126,7 @@
 <!-- Mentor Section -->
 <section id="mentor">
     <h2>Mentor</h2>
-    <p>Lobey Sangay Wangchuk is around 47 years old and hails from Tashigang, Bhutan. He is a senior at the Royal Academy and widely recognized as one of the best mentors. With his guidance, mentees are encouraged to learn, grow, and achieve their best potential. He is not only an excellent mentor but also a kind and supportive figure for the entire group.</p>
+    <p>Lobey Sangay Wangchuk is around 47 years old and hails from Tashi Yangtshi, Bhutan. He is a senior at the Royal Academy and widely recognized as one of the best mentors. With his guidance, mentees are encouraged to learn, grow, and achieve their best potential. He is not only an excellent mentor but also a kind and supportive figure for the entire group.</p>
     <p>He is married to Dorji Dema and together they have one daughter and one son. Beyond his professional accomplishments, he is known for his humility, dedication, and ability to inspire those around him.</p>
     <img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.11.11%E2%80%AFPM.png" alt="Mentor Photo">
 </section>
@@ -131,17 +134,16 @@
 <!-- Mentees Section -->
 <section id="mentees">
     <h2>Mentees</h2>
-    <p>Meet the amazing mentees. A group of hardworking, curious, and positive individuals who are always eager to learn and grow.</p>
-
-    <!-- Add Mentee Form -->
+    <p>Meet the amazing mentees. A group of hardworking, curious, and positive individuals who are always eager to learn and grow. They bring great energy, ask thoughtful questions, and support one another, making every session enjoyable and inspiring. Each mentee has unique strengths, and together they create a fun, encouraging environment. Watching them gain confidence and try new things shows just how dedicated and capable they are.</p>
+    
+    <!-- Upload box to add new mentee -->
     <div class="upload-box">
         <h3>Add New Mentee Photo</h3>
         <input type="file" accept="image/*" id="mentees-file">
         <input type="text" id="mentees-name" placeholder="Enter name and grade">
-        <button onclick="addMentee()">Add Photo</button>
+        <button onclick="addImageWithName()">Add Photo</button>
     </div>
 
-    <!-- Mentees Photos -->
     <div class="diagonal-row" id="mentees-container">
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.12.20%E2%80%AFPM.png" alt="Cheying Yeshi"><p>Cheying Yeshi - Grade 12</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.13.02%E2%80%AFPM.png" alt="Rinzin Wangmo"><p>Rinzin Wangmo - Grade 12</p></div>
@@ -161,7 +163,7 @@
 <!-- Nature Retreats Section -->
 <section id="nature">
     <h2>Nature Retreats</h2>
-    <p>Our group has visited several beautiful nature spots in Bhutan as our nature retreats. Exploring these places, we learned to appreciate the beauty, enjoy the moment, and discover new cultures.</p>
+    <p>Our group has visited several beautiful nature spots in Bhutan as our nature retreats. By exploring these places, I learned to pay attention to small details, enjoy the moment, and appreciate the beauty around me. I discovered new cultures, met kind people, and saw views that made me feel peaceful and inspired.</p>
     <div class="diagonal-row">
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Jele-Dzong-Hike-Paro-1024x565.jpg" alt="Jelha Dzong"><p>Jelha Dzong</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/gangtey.jpg" alt="Phobjikha"><p>Phobjikha</p></div>
@@ -175,7 +177,7 @@
 <!-- Group Photos Section -->
 <section id="groupphotos">
     <h2>Group Photos</h2>
-    <p>Here are some memorable moments captured from our mentor-mentee group:</p>
+    <p>Here are some memorable moments captured from our mentor-mentee:</p>
     <div class="diagonal-row">
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/WhatsApp%20Image%202024-10-07%20at%2011.33.05%20AM.jpeg" alt="Group Photo 1"></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445yawtys/Image_20250515_205345_464.jpeg" alt="Group Photo 2"></div>
@@ -183,7 +185,7 @@
 </section>
 
 <footer>
-    <p>&copy; 2025 Lobey Sangay Wangchuk Mentor-Mentee Group by Jamyang Yuden Dorj</p>
+    <p>&copy; 2025 Lobey Sangay Wangchuk Mentor-Mentee Group by Jamyang Yuden Dorji</p>
 </footer>
 
 <script>
@@ -193,32 +195,25 @@ function showSection(id) {
     window.scrollTo(0,0);
 }
 
-function addMentee() {
+// Function to add new mentee dynamically
+function addImageWithName() {
     const fileInput = document.getElementById('mentees-file');
     const nameInput = document.getElementById('mentees-name');
     const container = document.getElementById('mentees-container');
 
-    if (!fileInput.files[0] || nameInput.value.trim() === '') {
-        alert('Please select a photo and enter a name and grade.');
+    if(fileInput.files.length === 0 || nameInput.value.trim() === '') {
+        alert('Please select an image and enter a name with grade.');
         return;
     }
 
     const reader = new FileReader();
     reader.onload = function(e) {
         const div = document.createElement('div');
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        img.alt = nameInput.value;
-        const p = document.createElement('p');
-        p.textContent = nameInput.value;
-
-        div.appendChild(img);
-        div.appendChild(p);
+        div.innerHTML = `<img src="${e.target.result}" alt="${nameInput.value}"><p>${nameInput.value}</p>`;
         container.appendChild(div);
-
         fileInput.value = '';
         nameInput.value = '';
-    };
+    }
     reader.readAsDataURL(fileInput.files[0]);
 }
 </script>
