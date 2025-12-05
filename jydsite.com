@@ -188,7 +188,7 @@
     <h2>Mentees</h2>
     <p>Meet the hardworking, curious, and positive mentees who bring energy and inspiration to every session.</p>
     <div class="image-row">
-        <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.12.20%E2%80%AFPM.png" alt="Cheying Yeshi Dema grade:12(2025)"><p>Cheying Yeshi Dema</p></div>
+        <div><img src="https://uploads.onecompiler.io/43jct4j6q/446nabdtc/Screenshot%202025-12-05%20at%2010.31.25%E2%80%AFAM.png" alt="Cheying Yeshi Dema grade:12(2025)"><p>Cheying Yeshi Dema</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.13.02%E2%80%AFPM.png" alt="Rinzin Wangmo grade:12(2025)"><p>Rinzin Wangmo</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445acqxdj/Screenshot%202025-11-20%20at%2011.14.08%E2%80%AFPM.png" alt="Sonam Wangchukgrade:12(2025)"><p>Sonam Wangchuk</p></div>
         <div><img src="https://uploads.onecompiler.io/43jct4j6q/445dbktmt/Screenshot%202025-11-22%20at%2012.41.40%E2%80%AFPM.png" alt="Namgay Lhamo grade:11"><p>Namgay Lhamo</p></div>
@@ -239,4 +239,3 @@ function showSection(id) {
 
 </body>
 </html>
-
